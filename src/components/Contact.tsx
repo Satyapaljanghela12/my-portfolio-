@@ -51,19 +51,19 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-gray-soft rounded-full text-accent">
+              <div className="p-3 bg-gray-soft dark:bg-gray-medium rounded-full text-accent">
                 <Mail size={24} />
               </div>
               <div>
                 <h4 className="text-lg font-bold text-foreground mb-1">Email</h4>
-                <a href="mailto:satyapaljanghela@gmail.com" className="text-foreground/70 hover:text-accent transition-colors">
+                <a href="mailto:satyapaljanghela@gmail.com" className="text-foreground/70 hover:text-black dark:hover:text-white hover:underline hover:underline-offset-4 transition-all duration-300">
                   satyapaljanghela@gmail.com
                 </a>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-gray-soft rounded-full text-accent">
+              <div className="p-3 bg-gray-soft dark:bg-gray-medium rounded-full text-accent">
                 <MapPin size={24} />
               </div>
               <div>
@@ -77,7 +77,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div 
-            className="md:col-span-3 bg-background border border-gray-medium/50 rounded-2xl p-8 shadow-sm"
+            className="md:col-span-3 bg-background dark:bg-gray-soft/30 border border-gray-medium/50 rounded-2xl p-8 shadow-sm"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -91,7 +91,7 @@ export default function Contact() {
                     type="text"
                     id="name"
                     required
-                    className="w-full px-4 py-3 bg-gray-soft border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all"
+                    className="w-full px-4 py-3 bg-gray-soft dark:bg-gray-medium border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -102,7 +102,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     required
-                    className="w-full px-4 py-3 bg-gray-soft border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all"
+                    className="w-full px-4 py-3 bg-gray-soft dark:bg-gray-medium border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                   id="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-soft border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-soft dark:bg-gray-medium border border-gray-medium/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent text-foreground transition-all resize-none"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
@@ -122,7 +122,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-foreground text-background font-medium py-3.5 px-6 rounded-lg hover:bg-accent transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-foreground text-background font-medium py-3.5 px-6 rounded-lg hover:bg-black dark:hover:bg-white dark:hover:text-black hover:scale-105 hover:shadow-xl hover:shadow-black/20 dark:hover:shadow-white/20 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

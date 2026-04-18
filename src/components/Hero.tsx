@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
     >
       {/* Creative Background Pattern: Faint dotted grid that fades at the edges */}
       <div 
-        className="absolute inset-0 pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none z-0 dark:opacity-40"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.08) 2px, transparent 2px)',
           backgroundSize: '40px 40px',
@@ -75,17 +75,17 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-medium rounded-full hover:bg-foreground/80 transition-all duration-300 w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-medium rounded-full hover:bg-black dark:hover:bg-white dark:hover:text-black hover:scale-105 hover:shadow-xl hover:shadow-black/20 dark:hover:shadow-white/20 transition-all duration-300 w-full sm:w-auto"
           >
             View Projects
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
           </a>
           
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-gray-medium text-foreground font-medium rounded-full hover:border-foreground transition-all duration-300 w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-gray-medium text-foreground font-medium rounded-full hover:border-foreground hover:scale-105 transition-all duration-300 w-full sm:w-auto"
           >
             My Resume
           </a>

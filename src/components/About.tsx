@@ -49,7 +49,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative h-96 rounded-2xl bg-white border border-gray-medium/50 overflow-hidden group flex items-center justify-center shadow-sm"
+            className="relative h-96 rounded-2xl bg-white dark:bg-gray-soft border border-gray-medium/50 overflow-hidden group flex items-center justify-center shadow-sm"
           >
             {/* Image representing a developer coding */}
             <Image 

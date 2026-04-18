@@ -26,7 +26,7 @@ const EXPERIENCES = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-gray-soft">
+    <section id="experience" className="py-24 bg-gray-soft dark:bg-gray-soft/30">
       <div className="container mx-auto px-6 md:px-12">
         
         <motion.div 
@@ -44,7 +44,7 @@ export default function Experience() {
 
         <div className="max-w-4xl mx-auto md:mx-0 relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-10 top-0 bottom-0 w-px bg-gray-medium/80"></div>
+          <div className="absolute left-8 md:left-10 top-0 bottom-0 w-px bg-gray-medium/80 dark:bg-gray-medium"></div>
 
           <div className="space-y-12">
             {EXPERIENCES.map((exp, index) => (
@@ -65,7 +65,7 @@ export default function Experience() {
                 </motion.div>
 
                 {/* Content Card */}
-                <div className="bg-background rounded-2xl p-6 md:p-8 border border-gray-medium/50 shadow-sm hover:shadow-md transition-shadow group">
+                <div className="bg-background dark:bg-gray-medium rounded-2xl p-6 md:p-8 border border-gray-medium/50 shadow-sm hover:shadow-md transition-shadow group">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-2">
                     <h3 className="text-xl font-bold text-foreground group-hover:text-foreground/80 transition-colors">
                       {exp.title}

@@ -9,7 +9,7 @@ export default function Content() {
     <section id="content" className="relative py-32 bg-background overflow-hidden">
       {/* Creative Background Pattern: Faint dotted grid that fades at the edges */}
       <div 
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none dark:opacity-40"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.06) 2px, transparent 2px)',
           backgroundSize: '40px 40px',
@@ -45,10 +45,10 @@ export default function Content() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group p-8 rounded-[2rem] bg-gray-soft border border-gray-medium/30 flex flex-col justify-between aspect-square relative overflow-hidden"
+                whileHover={{ y: -8, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15)" }}
+                className="group p-8 rounded-[2rem] bg-gray-soft dark:bg-gray-soft/50 border border-gray-medium/30 hover:border-black/40 dark:hover:border-white/40 flex flex-col justify-between aspect-square relative overflow-hidden transition-colors duration-300"
               >
-                <div className="p-4 bg-background rounded-full w-fit shadow-sm">
+                <div className="p-4 bg-background dark:bg-gray-medium rounded-full w-fit shadow-sm">
                   <FileText size={28} className="text-foreground" />
                 </div>
                 <div className="mt-8">
@@ -69,8 +69,8 @@ export default function Content() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  whileHover={{ x: 5 }}
-                  className="group p-8 rounded-[2rem] bg-foreground text-background flex-1 flex flex-col justify-center relative overflow-hidden shadow-lg"
+                  whileHover={{ x: 8, scale: 1.02, boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.3)" }}
+                  className="group p-8 rounded-[2rem] bg-foreground hover:bg-black dark:hover:bg-white dark:hover:text-black text-background flex-1 flex flex-col justify-center relative overflow-hidden shadow-lg transition-colors duration-300"
                 >
                   <Code size={24} className="mb-4 opacity-70" />
                   <h3 className="text-2xl font-bold tracking-tight mb-2">Open Source</h3>
@@ -84,8 +84,8 @@ export default function Content() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  whileHover={{ x: 5 }}
-                  className="group p-8 rounded-[2rem] bg-background border border-gray-medium/50 flex-1 flex flex-col justify-center relative shadow-sm"
+                  whileHover={{ x: 8, scale: 1.02, boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15)" }}
+                  className="group p-8 rounded-[2rem] bg-background dark:bg-gray-medium border border-gray-medium/50 hover:border-black/40 dark:hover:border-white/40 flex-1 flex flex-col justify-center relative shadow-sm transition-colors duration-300"
                 >
                   <Play size={24} className="mb-4 text-foreground/70" />
                   <h3 className="text-2xl font-bold text-foreground tracking-tight mb-2">Tech Talks</h3>
@@ -105,7 +105,7 @@ export default function Content() {
             transition={{ duration: 0.7 }}
           >
             {/* Creative Image Container */}
-            <div className="absolute inset-4 bg-gradient-to-br from-gray-soft/80 to-transparent border border-gray-medium/20 rounded-[3rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-lg flex items-center justify-center">
+            <div className="absolute inset-4 bg-gradient-to-br from-gray-soft/80 dark:from-gray-soft/30 to-transparent border border-gray-medium/20 rounded-[3rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-lg flex items-center justify-center">
               <Image 
                 src="/content-sketch.png"
                 alt="Developer Sketch"
@@ -118,7 +118,7 @@ export default function Content() {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 w-24 h-24 bg-background border border-gray-medium/30 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -top-6 -right-6 w-24 h-24 bg-background dark:bg-gray-medium border border-gray-medium/30 rounded-full flex items-center justify-center shadow-lg"
             >
               <div className="w-3 h-3 bg-foreground rounded-full"></div>
             </motion.div>

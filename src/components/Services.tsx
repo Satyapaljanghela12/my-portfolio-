@@ -53,9 +53,9 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-gray-soft rounded-2xl p-8 border border-gray-medium/50 hover:border-accent/40 hover:shadow-lg transition-all duration-300"
+              className="group bg-gray-soft dark:bg-gray-soft/50 rounded-2xl p-8 border border-gray-medium/50 hover:border-black/60 dark:hover:border-white/40 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="mb-6 p-4 bg-background rounded-full w-fit shadow-sm group-hover:-translate-y-2 transition-transform duration-300">
+              <div className="mb-6 p-4 bg-background dark:bg-gray-medium rounded-full w-fit shadow-sm group-hover:-translate-y-2 transition-transform duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">

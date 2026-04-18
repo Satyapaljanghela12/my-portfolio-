@@ -27,6 +27,21 @@ export default function RootLayout({
       lang="en"
       className={`${jakartaSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (theme === 'dark' || (!theme && prefersDark)) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

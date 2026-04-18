@@ -43,7 +43,7 @@ export default function TechStack() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-gray-soft">
+    <section id="skills" className="py-24 bg-gray-soft dark:bg-gray-soft/30">
       <div className="container mx-auto px-6 md:px-12">
         
         <motion.div 
@@ -74,10 +74,11 @@ export default function TechStack() {
               key={tech.name}
               variants={itemVariants}
               whileHover={{ 
-                y: -5,
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)"
+                y: -8,
+                scale: 1.05,
+                boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -8px rgba(0, 0, 0, 0.1)"
               }}
-              className="flex items-center gap-3 px-6 py-4 bg-background border border-gray-medium/50 rounded-2xl cursor-default transition-colors hover:border-accent/30"
+              className="flex items-center gap-3 px-6 py-4 bg-background dark:bg-gray-medium border border-gray-medium/50 rounded-2xl cursor-default transition-colors hover:border-black/50 dark:hover:border-white/50"
             >
               <div className="flex flex-col">
                 <span className="font-semibold text-foreground">{tech.name}</span>

@@ -59,30 +59,30 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group flex flex-col bg-background border border-gray-medium/50 rounded-2xl overflow-hidden hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 transform hover:-translate-y-1"
+              className="group flex flex-col bg-background dark:bg-gray-soft/30 border border-gray-medium/50 rounded-2xl overflow-hidden hover:border-black/60 dark:hover:border-white/40 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-blue-500/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.02]"
             >
               {/* Image Placeholder with Gradient */}
               <div className={`h-48 w-full bg-gradient-to-br ${project.imageColor} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-background/10 backdrop-blur-[2px]"></div>
                 
                 {/* Abstract UI wires inside placeholder */}
-                <div className="absolute inset-x-4 bottom-0 h-32 bg-background rounded-t-lg shadow-sm transform translate-y-8 group-hover:translate-y-6 transition-transform duration-500 opacity-90">
-                  <div className="flex px-3 py-2 border-b border-gray-medium/30 gap-1.5">
+                <div className="absolute inset-x-4 bottom-0 h-32 bg-background dark:bg-gray-medium rounded-t-lg shadow-sm transform translate-y-8 group-hover:translate-y-6 transition-transform duration-500 opacity-90">
+                  <div className="flex px-3 py-2 border-b border-gray-medium/30 dark:border-gray-medium gap-1.5">
                     <div className="w-2 h-2 rounded-full bg-red-400"></div>
                     <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
                     <div className="w-2 h-2 rounded-full bg-green-400"></div>
                   </div>
                   <div className="p-4 space-y-2">
-                    <div className="h-2 w-3/4 bg-gray-medium/50 rounded"></div>
-                    <div className="h-2 w-1/2 bg-gray-medium/50 rounded"></div>
-                    <div className="h-2 w-5/6 bg-gray-medium/50 rounded"></div>
+                    <div className="h-2 w-3/4 bg-gray-medium/50 dark:bg-gray-soft rounded"></div>
+                    <div className="h-2 w-1/2 bg-gray-medium/50 dark:bg-gray-soft rounded"></div>
+                    <div className="h-2 w-5/6 bg-gray-medium/50 dark:bg-gray-soft rounded"></div>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">
                   {project.title}
                 </h3>
                 
@@ -94,7 +94,7 @@ export default function Projects() {
                   {project.tags.map(tag => (
                     <span 
                       key={tag} 
-                      className="px-2.5 py-1 text-xs font-medium bg-gray-soft text-foreground/80 rounded-md border border-gray-medium/40"
+                      className="px-2.5 py-1 text-xs font-medium bg-gray-soft dark:bg-gray-medium text-foreground/80 rounded-md border border-gray-medium/40 dark:border-gray-medium"
                     >
                       {tag}
                     </span>
@@ -104,7 +104,7 @@ export default function Projects() {
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-gray-medium/30">
                   <a 
                     href={project.github}
-                    className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-accent transition-colors"
+                    className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-black dark:hover:text-white hover:gap-2 transition-all duration-300"
                     aria-label={`View ${project.title} source code`}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.18-.38 6.52-1.6 6.52-7.01a4.8 4.8 0 0 0-1.3-3.32 4.09 4.09 0 0 0-.08-3.23s-1.09-.35-3.5 1.28a12.8 12.8 0 0 0-6.6 0c-2.4-1.63-3.5-1.28-3.5-1.28a4.09 4.09 0 0 0-.08 3.23 4.8 4.8 0 0 0-1.3 3.32c0 5.39 3.33 6.61 6.51 6.99A4.8 4.8 0 0 0 8 18v4"></path></svg>
@@ -112,11 +112,11 @@ export default function Projects() {
                   </a>
                   <a 
                     href={project.live}
-                    className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-accent transition-colors ml-auto"
+                    className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-black dark:hover:text-white hover:gap-2 transition-all duration-300 ml-auto group/link"
                     aria-label={`View ${project.title} live demo`}
                   >
                     <span>View Live</span>
-                    <ExternalLink size={16} />
+                    <ExternalLink size={16} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
                   </a>
                 </div>
               </div>

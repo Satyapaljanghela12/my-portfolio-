@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -59,7 +60,7 @@ export default function Navbar() {
           className="text-2xl font-bold tracking-tighter"
           onClick={(e) => handleScrollToSection(e, "#hero")}
         >
-          S<span className="text-accent">J</span>.
+          Satyapal.
         </a>
 
         {/* Desktop Nav */}
@@ -69,28 +70,33 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollToSection(e, link.href)}
-              className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+              className="relative text-sm font-medium text-foreground/80 hover:text-black dark:hover:text-white transition-all duration-300 group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="#contact"
             onClick={(e) => handleScrollToSection(e, "#contact")}
-            className="px-5 py-2.5 text-sm font-medium text-white bg-foreground hover:bg-foreground/80 hover:-translate-y-0.5 transition-all duration-300 rounded-full"
+            className="px-5 py-2.5 text-sm font-medium text-white bg-foreground hover:bg-black dark:hover:bg-white dark:hover:text-black hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 dark:hover:shadow-white/20 transition-all duration-300 rounded-full"
           >
             Let's Talk
           </a>
         </nav>
 
         {/* Mobile Nav Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            className="text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Drawer */}
@@ -108,7 +114,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleScrollToSection(e, link.href)}
-                  className="text-2xl font-medium text-foreground hover:text-accent transition-colors"
+                  className="text-2xl font-medium text-foreground hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300"
                 >
                   {link.name}
                 </a>
